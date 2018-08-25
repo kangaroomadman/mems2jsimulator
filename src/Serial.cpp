@@ -5,6 +5,8 @@
 
 // System includes
 #include <ftd2xx.h>
+#include <string>
+#include <stdexcept>
 
 // Project includes
 #include "Serial.h"
