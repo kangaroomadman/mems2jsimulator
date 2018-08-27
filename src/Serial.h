@@ -13,12 +13,16 @@ class Serial
 {
 public:
     //----------------------------------------------------------------------------------------------
-    /// @brief Constructor. Initialises FTDI.
+    /// @brief Constructor.
     Serial();
 
     //----------------------------------------------------------------------------------------------
-    /// @brief Destructor. Closes FTDI device.
+    /// @brief Destructor. Closes FTDI device (if opened).
     ~Serial();
+
+    //----------------------------------------------------------------------------------------------
+    /// @brief Connect to the FTDI device.
+    void Connect();
 
     //----------------------------------------------------------------------------------------------
     /// @brief Read a single byte from the serial device.
@@ -35,7 +39,7 @@ public:
     /// @param[in,out] response Read response
     ///
     /// @return True if read was successful
-    bool Read(Response& response);
+    bool Read(CommandOrResponse& response);
 
     //----------------------------------------------------------------------------------------------
     /// @brief Write a response to the serial device.
@@ -43,7 +47,7 @@ public:
     /// @param[in] response Response to write
     ///
     /// @return True if write was successful
-    bool Write(const Response& response);
+    bool Write(const CommandOrResponse& response);
 
 private:
     /// @brief Handle for the FTDI device

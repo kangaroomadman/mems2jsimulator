@@ -9,14 +9,11 @@
 #include <utility>
 #include <cstdint>
 
-/// @brief Type definition for a command.
-typedef std::vector<std::uint8_t> Command;
-
-/// @brief Type defintion for a response.
-typedef std::vector<std::uint8_t> Response;
+/// @brief Type definition for a command or response.
+typedef std::vector<std::uint8_t> CommandOrResponse;
 
 /// @brief Type definition for a command response pair.
-typedef std::pair<Command, Response> CommandResponsePair;
+typedef std::pair<CommandOrResponse, CommandOrResponse> CommandResponsePair;
 
 /// @brief Type definition for a vector of command and response pairs.
 typedef std::vector<CommandResponsePair> CommandResponses;
